@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import ResultList from './ResultList'
+import axios from "axios"
 
 class SearchResultContainer extends Component {
 state = {
@@ -12,17 +14,39 @@ componentDidMount(){
 }
 
 
-searchAPI = query => {
-    API.search(query)
-        .then(res => this.setState({results: res.data.data}))
-        .catch(err => console.log(err))
+searchAPI() {
+    
+    axios.get('https://randomuser.me/api/')
+        .then(res => this.setState({results: res.data.results[0]})
+            
+            
+            
+            // console.log(res.data.results[0])
+            
+            
+            
+            
+            // this.setState({results: res.data.result}),
+        
+        
+        )
+        
+            
 
+
+        
 }
+
+
 
 render (){
     return (
-        <div>This worked</div>
-    )
+        <div>
+        <ResultList results={this.state.results} />
+        </div>
+        
+        
+        )
 
 
 
