@@ -1,11 +1,11 @@
 // import logo from './logo.svg';
 import './App.css';
 import React from "react";
-import SearchResultContainer from "./components/SearchResultContainer"
+import DirectoryContainer from "./components/DirectoryContainer"
 
 function App() {
   return (
-    <SearchResultContainer />
+    <DirectoryContainer />
   );
 }
 
