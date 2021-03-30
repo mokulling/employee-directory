@@ -36,8 +36,8 @@ const useSortableData = (items, config = null) => {
   return { items: sortedItems, requestSort, sortConfig };
 };
 
-const ProductTable = (props) => {
-  const { items, requestSort, sortConfig } = useSortableData(props.products);
+export default function ProductTable(props) {
+  const { items, requestSort, sortConfig } = useSortableData(props.people);
   const getClassNamesFor = (name) => {
     if (!sortConfig) {
       return;
@@ -46,7 +46,7 @@ const ProductTable = (props) => {
   };
   return (
     <table>
-      <caption>Products</caption>
+      <caption>Employee Directory</caption>
       <thead>
         <tr>
           <th>
@@ -81,21 +81,21 @@ const ProductTable = (props) => {
   );
 };
 
-export default function Table() {
-  return (
-    <div className="App">
-      <ProductTable
-        products={[
-          { id: 1, name: 'Cheese', price: 4.9, location: 20 },
-          { id: 2, name: 'Milk', price: 1.9, location: 32 },
-          { id: 3, name: 'Yoghurt', price: 2.4, location: 12 },
-          { id: 4, name: 'Heavy Cream', price: 3.9, location: 9 },
-          { id: 5, name: 'Butter', price: 0.9, location: 99 },
-          { id: 6, name: 'Sour Cream ', price: 2.9, location: 86 },
-          { id: 7, name: 'Fancy French Cheese 🇫🇷', price: 99, location: 12 },
-        ]}
-      />
-    </div>
-  );
-}
+// export default function Table() {
+//   return (
+//     <div className="App">
+//       <ProductTable
+//         people={[
+//           { id: 1, name: 'test',  location: 20 },
+//           { id: 2, name: 'Milk', location: 32 },
+//           { id: 3, name: 'Yoghurt',  location: 12 },
+//           { id: 4, name: 'Heavy Cream',  location: 9 },
+//           { id: 5, name: 'Butter',  location: 99 },
+//           { id: 6, name: 'Sour Cream ',  location: 86 },
+//           { id: 7, name: 'Fancy French Cheese 🇫🇷',  location: 12 },
+//         ]}
+//       />
+//     </div>
+//   );
+// }
   

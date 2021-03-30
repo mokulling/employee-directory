@@ -4,16 +4,20 @@ import Row from "./Row";
 import Col from "./Col";
 import Employee from "./Employee";
 import API from "../utils/API";
-import Table from './Table'
+import ProductTable from './Table'
+
+
 
 
 class DirectoryContainer extends Component {
+
   state = {
     firstName: '',
     lastName: '',
     location: '',
     columns: '',
-    data: ''
+    data: '',
+    
   };
 
   // When this component mounts, search for the movie "The Matrix"
@@ -22,15 +26,21 @@ class DirectoryContainer extends Component {
   }
 
   renderNew = () => {
+    
+    const empArray = []
+
     API.search()
       .then(res => {
+
         // console.log(res.data.results[0])
         var firstName = res.data.results[0].name.first
         var lastName = res.data.results[0].name.last
         var location = res.data.results[0].location.country
         // console.log(firstName + ' ' + lastName + location)
         this.setState({ firstName: firstName, lastName: lastName, location: location })
+        empArray.push(firstName, lastName, location)
       })
+      // console.log(empArray)
     // .catch(err => console.log(err));
   };
 
@@ -53,7 +63,11 @@ class DirectoryContainer extends Component {
               location={this.state.location}
 
             />
-            <Table />
+       <ProductTable
+        people={[
+          { id: 1, name: this.state.firstName,  location: this.state.location },
+        ]}
+      />
           </Col>
           <Col size="md-4">
           </Col>
