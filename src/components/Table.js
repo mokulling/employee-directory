@@ -81,21 +81,3 @@ export default function ProductTable(props) {
   );
 };
 
-// export default function Table() {
-//   return (
-//     <div className="App">
-//       <ProductTable
-//         people={[
-//           { id: 1, name: 'test',  location: 20 },
-//           { id: 2, name: 'Milk', location: 32 },
-//           { id: 3, name: 'Yoghurt',  location: 12 },
-//           { id: 4, name: 'Heavy Cream',  location: 9 },
-//           { id: 5, name: 'Butter',  location: 99 },
-//           { id: 6, name: 'Sour Cream ',  location: 86 },
-//           { id: 7, name: 'Fancy French Cheese 🇫🇷',  location: 12 },
-//         ]}
-//       />
-//     </div>
-//   );
-// }
-  
