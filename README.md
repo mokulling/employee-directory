@@ -20,7 +20,7 @@ This app uses react to sort and create a list of employees using the random pers
  7. [Tests](#Tests)
 
 ## Screenshot
-![Screenshot](screenshot.png)
+![Screenshot](Screenshot.png)
 
 ## Usage
 
